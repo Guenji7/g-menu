@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../ring1/style.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="ring-menu-container">
+    <div class="center-button" onclick="alt.emit('goBack')">
+      <i class="fa-solid fa-arrow-left"></i>
+    </div>
+
+    <svg class="sub-ring" viewBox="0 0 620 620">
+      <!-- Sprache -->
+      <g onclick="changeLanguage()">
+        <path d="M310 10 A300 300 0 0 1 522.13 97.87 L451.42 168.58 A200 200 0 0 0 310 110z"/>
+        <text x="400" y="78">&#xf1ab;</text>
+      </g>
+
+      <!-- Audio -->
+      <g onclick="adjustAudio()">
+        <path d="M522.13 97.87 A300 300 0 0 1 610 310 L510 310 A200 200 0 0 0 451.42 168.58z"/>
+        <text x="545" y="220">&#xf028;</text>
+      </g>
+    </svg>
+  </div>
+
+  <script src="../ring1/script.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
