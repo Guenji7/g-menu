@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="ring-menu-container">
+    <!-- Zentraler Button mit "G" oder Exit-Symbol -->
+    <div class="center-button" id="centerButton">
+        G
+    </div>
+
+    <!-- Der dicke Ring mit Segmenten -->
+    <svg id="thick-ring" class="hidden" width="620px" height="620px" viewBox="0 0 620 620">
+        <!-- Dokumente -->
+        <g onclick="openSection('documents')" onmouseover="hoverSegment(this)" onmouseout="unhoverSegment(this)">
+            <path d="M 310 10 A 300 300 0 0 1 522.1320343559643 97.8679656440357 L 451.4213562373095 168.57864376269052 A 200 200 0 0 0 310 110 z" fill="rgba(0, 255, 255, 0.1)"/>
+            <text x="400" y="78" font-size="40" fill="white" text-anchor="middle" dominant-baseline="middle" class="icon" style="font-family: 'Font Awesome 6 Free'; font-weight: 900;">&#xf15b;</text>
+        </g>
+
+        <!-- Interaktionen -->
+        <g onclick="openSection('interactions')" onmouseover="hoverSegment(this)" onmouseout="unhoverSegment(this)">
+            <path d="M 522.1320343559643 97.8679656440357 A 300 300 0 0 1 610 310 L 510 310 A 200 200 0 0 0 451.4213562373095 168.57864376269052 z" fill="rgba(0, 255, 255, 0.1)"/>
+            <text x="545" y="220" font-size="40" fill="white" text-anchor="middle" dominant-baseline="middle" class="icon" style="font-family: 'Font Awesome 6 Free'; font-weight: 900;">&#xf2b5;</text>
+        </g>
+
+        <!-- Familie -->
+        <g onclick="openSection('family')" onmouseover="hoverSegment(this)" onmouseout="unhoverSegment(this)">
+            <path d="M 610 310 A 300 300 0 0 1 522.1320343559643 522.1320343559643 L 451.4213562373095 451.4213562373095 A 200 200 0 0 0 510 310 z" fill="rgba(0, 255, 255, 0.1)"/>
+            <text x="540" y="400" font-size="40" fill="white" text-anchor="middle" dominant-baseline="middle" class="icon" style="font-family: 'Font Awesome 6 Free'; font-weight: 900;">&#xf500;</text>
+        </g>
+
+        <!-- Stummschalten -->
+        <g onclick="toggleMute()" onclick"toggleMute()"" onmouseover="hoverSegment(this)" onmouseout="unhoverSegment(this)">
+            <path d="M 522.1320343559643 522.1320343559643 A 300 300 0 0 1 310 610 L 310 510 A 200 200 0 0 0 451.4213562373095 451.4213562373095 z" fill="rgba(0, 255, 255, 0.1)"/>
+            <text x="413" y="547" font-size="40" fill="white" text-anchor="middle" dominant-baseline="middle" class="icon" style="font-family: 'Font Awesome 6 Free'; font-weight: 900;">&#xf6a9;</text>
+        </g>
+
+        <!-- Einstellungen -->
+        <g onclick="openSection('settings')" onmouseover="hoverSegment(this)" onmouseout="unhoverSegment(this)">
+            <path d="M 310 610 A 300 300 0 0 1 97.86796564403576 522.1320343559643 L 168.57864376269052 451.4213562373095 A 200 200 0 0 0 310 510 z" fill="rgba(0, 255, 255, 0.1)"/>
+            <text x="213" y="545" font-size="40" fill="white" text-anchor="middle" dominant-baseline="middle" class="icon" style="font-family: 'Font Awesome 6 Free'; font-weight: 900;">&#xf013;</text>
+        </g>
+
+        <!-- Freunde -->
+        <g onclick="openSection('friends')" onmouseover="hoverSegment(this)" onmouseout="unhoverSegment(this)">
+            <path d="M 97.86796564403576 522.1320343559643 A 300 300 0 0 1 10 310 L 110 310 A 200 200 0 0 0 168.57864376269052 451.4213562373095 z" fill="rgba(0, 255, 255, 0.1)"/>
+            <text x="82" y="405" font-size="40" fill="white" text-anchor="middle" dominant-baseline="middle" class="icon" style="font-family: 'Font Awesome 6 Free'; font-weight: 900;">&#xf500;</text>
+        </g>
+
+        <!-- Nachrichten -->
+        <g onclick="openSection('messages')" onmouseover="hoverSegment(this)" onmouseout="unhoverSegment(this)">
+            <path d="M 10 310 A 300 300 0 0 1 97.86796564403576 97.8679656440357 L 168.57864376269052 168.57864376269052 A 200 200 0 0 0 110 310 z" fill="rgba(0, 255, 255, 0.1)"/>
+            <text x="72" y="223" font-size="40" fill="white" text-anchor="middle" dominant-baseline="middle" class="icon" style="font-family: 'Font Awesome 6 Free'; font-weight: 900;">&#xf0e0;</text>
+        </g>
+
+        <!-- Profil -->
+        <g onclick="openSection('profile')" onmouseover="hoverSegment(this)" onmouseout="unhoverSegment(this)">
+            <path d="M 97.86796564403576 97.8679656440357 A 300 300 0 0 1 310 10 L 310 110 A 200 200 0 0 0 168.57864376269052 168.57864376269052 z" fill="rgba(0, 255, 255, 0.1)"/>
+            <text x="215" y="77" font-size="40" fill="white" text-anchor="middle" dominant-baseline="middle" class="icon" style="font-family: 'Font Awesome 6 Free'; font-weight: 900;">&#xf007;</text>
+        </g>
+        <g id="thick-ring" class="ring-menu" width="620px" height="620px" viewBox="0 0 620 620">
+        <!-- Dokumente -->
+        <g onclick="openDocumentRing()" onmouseover="hoverSegment(this)" onmouseout="unhoverSegment(this)">
+                <path d="M 310 10 A 300 300 0 0 1 522.1320343559643 97.8679656440357 L 451.4213562373095 168.57864376269052 A 200 200 0 0 0 310 110 z" fill="rgba(0, 255, 255, 0.1)"/>
+                <text x="400" y="78" font-size="40" fill="white" text-anchor="middle" dominant-baseline="middle" class="icon" style="font-family: 'Font Awesome 6 Free'; font-weight: 900;">&#xf15b;</text>
+            </g>
+            <!-- Weitere Segmente -->
+    </svg>
+</div>
+
+<!-- Dokumente -->
+<div id="documents" class="section hidden">
+    <button class="back-btn" onclick="goBack()"><i class="fa-solid fa-arrow-left"></i></button>
+    <h2>Dokumente</h2>
+    <div class="grid-container">
+        <button class="function-btn" onclick="showDocument('passport')">
+            <i class="fa-solid fa-passport"></i>
+            <span>Reisepass</span>
+        </button>
+        <button class="function-btn" onclick="showDocument('id')">
+            <i class="fa-solid fa-id-card"></i>
+            <span>Ausweis</span>
+        </button>
+        <button class="function-btn" onclick="showDocument('licenses')">
+            <i class="fa-solid fa-id-badge"></i>
+            <span>Lizenzen</span>
+        </button>
+    </div>
+</div>
+
+<!-- Interaktionen -->
+<div id="interactions" class="section hidden">
+    <button class="back-btn" onclick="goBack()"><i class="fa-solid fa-arrow-left"></i></button>
+    <h2>Interaktionen</h2>
+    <div class="grid-container">
+        <button class="function-btn" onclick="performAction('give-money')">
+            <i class="fa-solid fa-coins"></i>
+            <span>Geld geben</span>
+        </button>
+        <button class="function-btn" onclick="performAction('sell')">
+            <i class="fa-solid fa-tag"></i>
+            <span>Verkaufen</span>
+        </button>
+        <button class="function-btn" onclick="performAction('trade')">
+            <i class="fa-solid fa-exchange-alt"></i>
+            <span>Tauschen</span>
+        </button>
+        <button class="function-btn" onclick="performAction('shake-hands')">
+            <i class="fa-solid fa-handshake"></i>
+            <span>Hände schütteln</span>
+        </button>
+        <button class="function-btn" onclick="performAction('heal')">
+            <i class="fa-solid fa-heart"></i>
+            <span>Heilen</span>
+        </button>
+    </div>
+</div>
+
+<!-- Familie -->
+<div id="family" class="section hidden">
+    <button class="back-btn" onclick="goBack()"><i class="fa-solid fa-arrow-left"></i></button>
+    <h2>Familie</h2>
+    <div class="grid-container">
+        <button class="function-btn" onclick="performAction('invite')">
+            <i class="fa-solid fa-user-plus"></i>
+            <span>Einladen</span>
+        </button>
+        <button class="function-btn" onclick="performAction('dismiss')">
+            <i class="fa-solid fa-user-minus"></i>
+            <span>Entlassen</span>
+        </button>
+        <button class="function-btn" onclick="performAction('transfer-leadership')">
+            <i class="fa-solid fa-crown"></i>
+            <span>Führung übergeben</span>
+        </button>
+    </div>
+</div>
+
+<!-- Einstellungen -->
+<div id="settings" class="section hidden">
+    <button class="back-btn" onclick="goBack()"><i class="fa-solid fa-arrow-left"></i></button>
+    <h2>Einstellungen</h2>
+    <div class="grid-container">
+        <button class="function-btn" onclick="performAction('change-language')">
+            <i class="fa-solid fa-language"></i>
+            <span>Sprache ändern</span>
+        </button>
+        <button class="function-btn" onclick="performAction('adjust-audio')">
+            <i class="fa-solid fa-volume-high"></i>
+            <span>Audio anpassen</span>
+        </button>
+    </div>
+</div>
+
+<!-- Freunde -->
+<div id="friends" class="section hidden">
+    <button class="back-btn" onclick="goBack()"><i class="fa-solid fa-arrow-left"></i></button>
+    <h2>Freunde</h2>
+    <div class="grid-container">
+        <button class="function-btn" onclick="performAction('add-friend')">
+            <i class="fa-solid fa-user-plus"></i>
+            <span>Freund hinzufügen</span>
+        </button>
+        <button class="function-btn" onclick="performAction('remove-friend')">
+            <i class="fa-solid fa-user-minus"></i>
+            <span>Freund entfernen</span>
+        </button>
+    </div>
+</div>
+
+<!-- Nachrichten -->
+<div id="messages" class="section hidden">
+    <button class="back-btn" onclick="goBack()"><i class="fa-solid fa-arrow-left"></i></button>
+    <h2>Nachrichten</h2>
+    <div class="grid-container">
+        <button class="function-btn" onclick="performAction('send-message')">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span>Nachricht senden</span>
+        </button>
+        <button class="function-btn" onclick="performAction('read-messages')">
+            <i class="fa-solid fa-envelope-open-text"></i>
+            <span>Nachrichten lesen</span>
+        </button>
+    </div>
+</div>
+
+<!-- Profil -->
+<div id="profile" class="section hidden">
+    <button class="back-btn" onclick="goBack()"><i class="fa-solid fa-arrow-left"></i></button>
+    <h2>Profil</h2>
+    <div class="grid-container">
+        <button class="function-btn" onclick="performAction('edit-profile')">
+            <i class="fa-solid fa-pen-to-square"></i>
+            <span>Profil bearbeiten</span>
+        </button>
+        <button class="function-btn" onclick="performAction('view-stats')">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Statistiken anzeigen</span>
+        </button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

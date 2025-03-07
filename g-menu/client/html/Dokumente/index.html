@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div id="ring-menu-container">
+      <!-- Hier das neue Dokumentenmenü -->
+      <svg id="document-ring" class="ring-menu" width="620px" height="620px" viewBox="0 0 620 620">
+          <!-- Eigenen Dokumenten-Inhalt hinzufügen -->
+          <g onclick="goBack()" onmouseover="hoverSegment(this)" onmouseout="unhoverSegment(this)">
+              <path d="M 310 10 A 300 300 0 0 1 522.1320343559643 97.8679656440357 L 451.4213562373095 168.57864376269052 A 200 200 0 0 0 310 110 z" fill="rgba(0, 255, 255, 0.1)"/>
+              <text x="400" y="78" font-size="40" fill="white" text-anchor="middle" dominant-baseline="middle" class="icon">&#xf00d;</text>
+          </g>
+          <!-- Weitere Segmente hier hinzufügen -->
+      </svg>
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html>
